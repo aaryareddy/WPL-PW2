@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+    <style type="text/css">
+  .funkyclass { color:dodgerblue }
+
+  input[type="text"]{
+    background-color: rgb(240, 240, 240);
+  }
+
+  input[type="email"]{
+    background-color: rgb(240, 240, 240);
+  }
+
+  input[type="password"]{
+    background-color: rgb(240, 240, 240);
+  }
+
+</style>
+
+
+    <script>    
+    function validate() {
+
+    var z = true;
+    var inputs = document.querySelectorAll("input");
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].value == "") {
+        inputs[i].style.borderColor = "red";
+        z = false;
+      }
+    }
+
+      if(!z)
+      {
+        alert("Error! Fill all the details!")
+        return z;
+      }
+
+    if(z){
+    if (document.querySelector("#check").checked == false) {
+      document.querySelector("#check").style.borderColor = "red";
+      z = false;
+      alert("Error! Please agree the terms of Use and policy")
+      return z;
+    }
+  }
+
+    if (z) {
+      if (document.querySelector("#Password1").value != document.querySelector("#Password2").value) {
+        document.querySelector("#Password2").style.borderColor = "red";
+        z=false;
+        alert("Validation Error! Password not matched")
+         return z;
+      }
+    }
+    
+    if(z){
+      alert("Form Submitted Successfully!")
+      return z;
+    }
+  }
+  
+  </script>
+
+    <title>Practice Work -2 </title>
+  </head>
+  <body>
+  <form onSubmit = "return validate()" style="border:1px solid #ccc">
+  <div class="container border w-25 px-2 py-2">
+  
+    <h1><strong>Sign Up</strong></h1>
+    <br>
+    <p>Please fill in this form to create an account!</p>
+    <hr>
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" id="Name1" placeholder="First Name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" id="Name2" placeholder="Last Name">
+      </div>
+    </div>
+    <br>
+    <input type="email" class="form-control"  id="Email1" aria-describedby="emailHelp" placeholder="Email">
+    <br>
+    <input type="password" class="form-control" name="Password1" id="Password1" placeholder="Password">
+    <br>
+    <input type="password" class="form-control"  name="Password2" id="Password2" placeholder="Confirm Password">
+    <br>
+    <label>
+    <input type="checkbox" name="Terms" id="check" style="margin-bottom:15px"> I accept the <span CLASS="funkyclass"> Terms of Use</span> & <span CLASS="funkyclass">Privacy policy </span>
+    </label>
+    <div class="clearfix">
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+    </div>
+</div>
+</div>
+</form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html> 
